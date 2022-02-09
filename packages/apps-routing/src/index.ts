@@ -12,6 +12,7 @@ import calendar from './calendar';
 import claims from './claims';
 import contracts from './contracts';
 import council from './council';
+import ddelegation from './ddelegation';
 import democracy from './democracy';
 import explorer from './explorer';
 import extrinsics from './extrinsics';
@@ -39,6 +40,7 @@ export default function create (t: TFunction): Routes {
     poll(t),
     transfer(t),
     staking(t),
+    ddelegation(t),
     democracy(t),
     council(t),
     treasury(t),
