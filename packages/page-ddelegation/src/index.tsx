@@ -6,58 +6,65 @@ import type { AppProps as Props } from '@polkadot/react-components/types';
 import React, { useRef } from 'react';
 import { Route, Switch } from 'react-router';
 
-import { HelpOverlay, Tabs } from '@polkadot/react-components';
-import { useAccounts, useIpfs } from '@polkadot/react-hooks';
+import { HelpOverlay, Tabs, InputAddress, Table } from '@polkadot/react-components';
 
+import Delegate from './modals/Delegate';
+import UndelegateModal from './modals/Undelegate';
 import basicMd from './md/basic.md';
 import Accounts from './Accounts';
 import { useTranslation } from './translate';
 import useCounter from './useCounter';
-import Vanity from './Vanity';
 
 export { useCounter };
 
-const HIDDEN_ACC = ['vanity'];
-
 function AccountsApp ({ basePath, onStatusChange }: Props): React.ReactElement<Props> {
   const { t } = useTranslation();
-  const { hasAccounts } = useAccounts();
-  const { isIpfs } = useIpfs();
 
   const tabsRef = useRef([
     {
       isRoot: true,
       name: 'overview',
-      text: t<string>('My accounts')
-    },
-    {
-      name: 'vanity',
-      text: t<string>('Vanity generator')
+      text: t<string>('Delegation')
     }
   ]);
+
+  interface Props {
+    accountDelegating: string | null;
+    onClose: () => void;
+  }
 
   return (
     <main className='accounts--App'>
       <HelpOverlay md={basicMd as string} />
       <Tabs
         basePath={basePath}
-        hidden={(hasAccounts && !isIpfs) ? undefined : HIDDEN_ACC}
         items={tabsRef.current}
       />
-      <Switch>
-        <Route path={`${basePath}/vanity`}>
-          <Vanity
-            basePath={basePath}
-            onStatusChange={onStatusChange}
-          />
-        </Route>
+      <h1>Delegate</h1>
+      <p>Delegating votes allows others to vote with your tokens. but not spend or transfer them, in a non-custodial fashion. Read more about liquid democracy</p>
+      <Delegate/>
+      {/* <Switch>
         <Route>
           <Accounts
             basePath={basePath}
             onStatusChange={onStatusChange}
           />
         </Route>
-      </Switch>
+      </Switch> */}
+      <h1>Your Delegations</h1>
+      <Table>
+          <InputAddress
+          //defaultValue={accountDelegating}
+            isDisabled
+            label={t<string>('delegating account')}
+          />
+        </Table>
+      {/* <Accounts
+        basePath={basePath}
+        onStatusChange={onStatusChange}
+      /> */}
+      <h1>Undelegate</h1>
+      <UndelegateModal/>
     </main>
   );
 }

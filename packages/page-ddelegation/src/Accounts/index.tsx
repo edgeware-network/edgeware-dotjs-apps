@@ -43,6 +43,8 @@ interface Props {
 
 const STORE_FAVS = 'accounts:favorites';
 
+
+
 function Overview ({ className = '', onStatusChange }: Props): React.ReactElement<Props> {
   const { t } = useTranslation();
   const { api } = useApi();
@@ -141,91 +143,18 @@ function Overview ({ className = '', onStatusChange }: Props): React.ReactElemen
 
   const filter = useMemo(() => (
     <div className='filter--tags'>
-      <Input
+      {/* <Input
         autoFocus
         isFull
         label={t<string>('filter by name or tags')}
         onChange={setFilter}
         value={filterOn}
-      />
+      /> */}
     </div>
   ), [filterOn, t]);
 
   return (
     <div className={className}>
-      {isCreateOpen && (
-        <CreateModal
-          onClose={toggleCreate}
-          onStatusChange={onStatusChange}
-        />
-      )}
-      {isImportOpen && (
-        <ImportModal
-          onClose={toggleImport}
-          onStatusChange={onStatusChange}
-        />
-      )}
-      {isLedgerOpen && (
-        <Ledger onClose={toggleLedger} />
-      )}
-      {isMultisigOpen && (
-        <Multisig
-          onClose={toggleMultisig}
-          onStatusChange={onStatusChange}
-        />
-      )}
-      {isProxyOpen && (
-        <Proxy
-          onClose={toggleProxy}
-          onStatusChange={onStatusChange}
-        />
-      )}
-      {isQrOpen && (
-        <Qr
-          onClose={toggleQr}
-          onStatusChange={onStatusChange}
-        />
-      )}
-      <Button.Group>
-        <Button
-          icon='plus'
-          isDisabled={isIpfs}
-          label={t<string>('Add account')}
-          onClick={toggleCreate}
-        />
-        <Button
-          icon='sync'
-          isDisabled={isIpfs}
-          label={t<string>('Restore JSON')}
-          onClick={toggleImport}
-        />
-        <Button
-          icon='qrcode'
-          label={t<string>('Add via Qr')}
-          onClick={toggleQr}
-        />
-        {isLedgerEnabled && (
-          <>
-            <Button
-              icon='project-diagram'
-              label={t<string>('Add via Ledger')}
-              onClick={toggleLedger}
-            />
-          </>
-        )}
-        <Button
-          icon='plus'
-          isDisabled={!(api.tx.multisig || api.tx.utility) || !hasAccounts}
-          label={t<string>('Multisig')}
-          onClick={toggleMultisig}
-        />
-        <Button
-          icon='plus'
-          isDisabled={!api.tx.proxy || !hasAccounts}
-          label={t<string>('Proxied')}
-          onClick={toggleProxy}
-        />
-      </Button.Group>
       <BannerExtension />
       <BannerClaims />
       <Table

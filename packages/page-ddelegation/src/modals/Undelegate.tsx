@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-import { InputAddress, Modal, TxButton } from '@polkadot/react-components';
+import { InputAddress, Modal, TxButton, Table } from '@polkadot/react-components';
 import { useApi } from '@polkadot/react-hooks';
 
 import { useTranslation } from '../translate';
@@ -18,11 +18,12 @@ function Undelegate ({ accountDelegating, onClose }: Props): React.ReactElement<
   const { api } = useApi();
 
   return (
-    <Modal
-      className='staking--Undelegate'
-      header= {t<string>('Undelegate')}
-      size='large'
-    >
+    // <Modal
+    //   className='staking--Undelegate'
+    //   header= {t<string>('Undelegate')}
+    //   size='large'
+    // >
+    <Table>
       <Modal.Content>
         <Modal.Columns hint={t<string>('You will remove any delegation made by this acccount')}>
           <InputAddress
@@ -41,7 +42,7 @@ function Undelegate ({ accountDelegating, onClose }: Props): React.ReactElement<
           tx={api.tx.democracy.undelegate}
         />
       </Modal.Actions>
-    </Modal>
+    </Table>
   );
 }
 
