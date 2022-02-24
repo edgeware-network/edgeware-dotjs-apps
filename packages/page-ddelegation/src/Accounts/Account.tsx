@@ -592,12 +592,12 @@ function Account ({ account: { address, meta }, className = '', delegation, filt
       <td className='button'>
         {isFunction(api.api.tx.balances?.transfer) && (
           <Button
-            icon='paper-plane'
-            label={t<string>('send')}
-            onClick={toggleTransfer}
+            icon='stop'
+            label={t<string>('Undelegate')}
+            onClick={toggleUndelegate}
           />
         )}
-        <Popup
+        {/* <Popup
           className={`theme--${theme}`}
           isOpen={isSettingsOpen}
           onClose={toggleSettings}
@@ -616,16 +616,16 @@ function Account ({ account: { address, meta }, className = '', delegation, filt
           >
             {menuItems}
           </Menu>
-        </Popup>
+        </Popup> */}
       </td>
-      <td className='links media--1400'>
+      {/* <td className='links media--1400'>
         <LinkExternal
           className='ui--AddressCard-exporer-link'
           data={address}
           isLogo
           type='address'
         />
-      </td>
+      </td> */}
     </tr>
   );
 }

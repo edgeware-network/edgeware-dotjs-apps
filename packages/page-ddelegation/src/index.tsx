@@ -9,7 +9,8 @@ import { Route, Switch } from 'react-router';
 import { HelpOverlay, Tabs, InputAddress, Table } from '@polkadot/react-components';
 
 import Delegate from './modals/Delegate';
-import UndelegateModal from './modals/Undelegate';
+import Undelegate from './modals/Undelegate';
+import DelegatedAccount from './modals/DelegatedAccount';
 import basicMd from './md/basic.md';
 import Accounts from './Accounts';
 import { useTranslation } from './translate';
@@ -51,20 +52,22 @@ function AccountsApp ({ basePath, onStatusChange }: Props): React.ReactElement<P
           />
         </Route>
       </Switch> */}
-      <h1>Your Delegations</h1>
-      <Table>
-          <InputAddress
+      <h1>Undelegate</h1>
+        <Accounts/>
+        
+        {/* <Undelegate/>
+        <DelegatedAccount/> */}
+        
+          {/* <InputAddress
           //defaultValue={accountDelegating}
             isDisabled
             label={t<string>('delegating account')}
-          />
-        </Table>
+          /> */}
+        {/* </Table> */}
       {/* <Accounts
         basePath={basePath}
         onStatusChange={onStatusChange}
       /> */}
-      <h1>Undelegate</h1>
-      <UndelegateModal/>
     </main>
   );
 }
