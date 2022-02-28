@@ -24,7 +24,7 @@ function Undelegate ({ accountDelegating, onClose }: Props): React.ReactElement<
       size='large'
     >
       <Modal.Content>
-        <Modal.Columns hint={t<string>('You will remove any delegation made by this acccount')}>
+        <Modal.Columns hint={t<string>('You will remove any delegation made by this account')}>
           <InputAddress
             defaultValue={accountDelegating}
             isDisabled
@@ -36,7 +36,7 @@ function Undelegate ({ accountDelegating, onClose }: Props): React.ReactElement<
         <TxButton
           accountId={accountDelegating}
           icon='sign-in-alt'
-          label={t<string>('Undelegate')}
+          label={t<string>('Udelegate')}
           onStart={onClose}
           tx={api.tx.democracy.undelegate}
         />
