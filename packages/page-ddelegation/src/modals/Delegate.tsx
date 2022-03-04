@@ -42,14 +42,7 @@ function Delegate ({ onClose, previousAmount, previousConviction, previousDelega
     conviction !== previousConviction?.toNumber();
 
   return (
-    <Table
-      // className='staking--Delegate'
-      // header={previousDelegatedAccount
-      //   ? t<string>('democracy vote delegation')
-      //   : t<string>('delegate democracy vote')
-      // }
-      // size='large'
-    >
+    <Table>
       <Modal.Content>
         <Modal.Columns hint={
           <>
@@ -66,7 +59,7 @@ function Delegate ({ onClose, previousAmount, previousConviction, previousDelega
           <InputAddress
             label={t<string>('delegated account')}
             onChange={setDelegatedAccount}
-            type='account'
+            type='all'
             value={delegatedAccount}
           />
         </Modal.Columns>

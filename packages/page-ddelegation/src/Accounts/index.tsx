@@ -14,12 +14,12 @@ import { useAccounts, useApi, useCall, useFavorites, useIpfs, useLedger, useLoad
 import { FormatBalance } from '@polkadot/react-query';
 import { BN_ZERO } from '@polkadot/util';
 
-import CreateModal from '../modals/Create';
-import ImportModal from '../modals/Import';
-import Ledger from '../modals/Ledger';
-import Multisig from '../modals/MultisigCreate';
-import Proxy from '../modals/ProxiedAdd';
-import Qr from '../modals/Qr';
+// import CreateModal from '../modals/Create';
+// import ImportModal from '../modals/Import';
+// import Ledger from '../modals/Ledger';
+// import Multisig from '../modals/MultisigCreate';
+// import Proxy from '../modals/ProxiedAdd';
+// import Qr from '../modals/Qr';
 import { useTranslation } from '../translate';
 import { sortAccounts } from '../util';
 import Account from './Account';
@@ -49,14 +49,14 @@ function Overview ({ className = '', onStatusChange }: Props): React.ReactElemen
   const { t } = useTranslation();
   const { api } = useApi();
   const { allAccounts, hasAccounts } = useAccounts();
-  const { isIpfs } = useIpfs();
-  const { isLedgerEnabled } = useLedger();
-  const [isCreateOpen, toggleCreate] = useToggle();
-  const [isImportOpen, toggleImport] = useToggle();
-  const [isLedgerOpen, toggleLedger] = useToggle();
-  const [isMultisigOpen, toggleMultisig] = useToggle();
-  const [isProxyOpen, toggleProxy] = useToggle();
-  const [isQrOpen, toggleQr] = useToggle();
+  // const { isIpfs } = useIpfs();
+  // const { isLedgerEnabled } = useLedger();
+  // const [isCreateOpen, toggleCreate] = useToggle();
+  // const [isImportOpen, toggleImport] = useToggle();
+  // const [isLedgerOpen, toggleLedger] = useToggle();
+  // const [isMultisigOpen, toggleMultisig] = useToggle();
+  // const [isProxyOpen, toggleProxy] = useToggle();
+  // const [isQrOpen, toggleQr] = useToggle();
   const [favorites, toggleFavorite] = useFavorites(STORE_FAVS);
   const [{ balanceTotal }, setBalances] = useState<Balances>({ accounts: {} });
   const [filterOn, setFilter] = useState<string>('');
@@ -143,13 +143,13 @@ function Overview ({ className = '', onStatusChange }: Props): React.ReactElemen
 
   const filter = useMemo(() => (
     <div className='filter--tags'>
-      {/* <Input
+      <Input
         autoFocus
         isFull
         label={t<string>('filter by name or tags')}
         onChange={setFilter}
         value={filterOn}
-      /> */}
+      />
     </div>
   ), [filterOn, t]);
 
