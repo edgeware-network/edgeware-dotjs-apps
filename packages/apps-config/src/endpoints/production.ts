@@ -31,7 +31,7 @@ export function createProduction (t: TFunction, firstOnly: boolean, withSort: bo
       text: t('rpc.prod.edgeware-edgeevm', 'EdgeEVM', { ns: 'apps-config' }),
       providers: {
         'Commonwealth Labs': 'wss://mainnet.edgewa.re/evm',
-        OnFinality: 'wss://edgeware.api.onfinality.io/public-ws'
+        OnFinality: 'wss://edgeware.api.onfinality.io/ws?apikey=ae5ff6d6-bc58-4199-b1bb-dbfffc2164f2'
       }
     },
     {
