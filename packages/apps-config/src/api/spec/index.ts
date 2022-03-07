@@ -113,7 +113,7 @@ const spec: Record<string, OverrideBundleDefinition> = {
   'dotmog-node': dotmog,
   dusty4: dusty,
   edgeware,
-  'edgeware-edgeevm',
+  'edgeware-edgeevm': edgewareEdgeEVM,
   'encointer-node-notee': encointerNodeNotee,
   'encointer-node-teeproxy': encointerNodeTeeproxy,
   'encointer-parachain': encointerPara,
