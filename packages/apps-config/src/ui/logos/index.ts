@@ -297,6 +297,7 @@ export const namedLogos: Record<string, unknown> = {
   dusty: chainDusty,
   eave: nodeEave,
   edgeware: nodeEdgeware,
+  'edgeware-edgeevm': nodeEdgeware,
   empty: emptyLogo,
   encointer_cantillon: nodeEncointerTeeproxy,
   encointer_gesell: nodeEncointerNotee,
