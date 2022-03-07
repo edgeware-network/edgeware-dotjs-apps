@@ -25,6 +25,7 @@ import dotmog from './dotmog';
 import dusty from './dusty';
 import eave from './eave';
 import edgeware from './edgeware';
+import edgewareEdgeEVM from './edgeware-edgeevm';
 import encointerNodeNotee from './encointer-node-notee';
 import encointerNodeTeeproxy from './encointer-node-teeproxy';
 import encointerPara from './encointer-para';
@@ -112,7 +113,7 @@ const spec: Record<string, OverrideBundleDefinition> = {
   'dotmog-node': dotmog,
   dusty4: dusty,
   edgeware,
-  'edgeware-edgeevm': edgeware,
+  'edgeware-edgeevm',
   'encointer-node-notee': encointerNodeNotee,
   'encointer-node-teeproxy': encointerNodeTeeproxy,
   'encointer-parachain': encointerPara,
