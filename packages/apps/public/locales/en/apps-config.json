@@ -26,6 +26,7 @@
   "rpc.dusty": "Dusty",
   "rpc.eave": "EAVE",
   "rpc.edgeware": "Edgeware",
+  "rpc.edgeware-edgeevm": "EdgeEVM",
   "rpc.encointer.cantillon": "Encointer Cantillon",
   "rpc.encointer.gesell": "Encointer Gesell",
   "rpc.equilibrium": "Equilibrium",
