@@ -27,6 +27,13 @@ export function createProduction (t: TFunction, firstOnly: boolean, withSort: bo
       }
     },
     {
+      info: 'edgeware-edgeevm',
+      text: t('rpc.prod.edgeware-edgeevm', 'EdgeEVM', { ns: 'apps-config' }),
+      providers: {
+        'Commonwealth Labs': 'wss://mainnet.edgewa.re/evm',
+        OnFinality: 'wss://edgeware.api.onfinality.io/public-ws'
+      },
+    {
       dnslink: 'polkadot',
       info: 'polkadot',
       text: t('rpc.polkadot.parity', 'Polkadot', { ns: 'apps-config' }),
