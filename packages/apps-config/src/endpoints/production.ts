@@ -27,7 +27,7 @@ export function createProduction (t: TFunction, firstOnly: boolean, withSort: bo
       }
     },
     {
-      info: 'edgeware-edgeevm',
+      info: 'edgeware',
       text: t('rpc.prod.edgeware-edgeevm', 'EdgeEVM', { ns: 'apps-config' }),
       providers: {
         'Commonwealth Labs': 'wss://mainnet.edgewa.re/evm',
