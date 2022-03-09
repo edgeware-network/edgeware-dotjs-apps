@@ -21,7 +21,6 @@ function Undelegate ({ accountDelegating, onClose }: Props): React.ReactElement<
     <Modal
       className='staking--Undelegate'
       header= {t<string>('Undelegate')}
-      onClose={onClose}
       size='large'
     >
       <Modal.Content>
@@ -33,7 +32,7 @@ function Undelegate ({ accountDelegating, onClose }: Props): React.ReactElement<
           />
         </Modal.Columns>
       </Modal.Content>
-      <Modal.Actions>
+      <Modal.Actions onCancel={onClose}>
         <TxButton
           accountId={accountDelegating}
           icon='sign-in-alt'
