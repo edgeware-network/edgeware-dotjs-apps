@@ -62,7 +62,7 @@ function Messages ({ className = '', contract, contractAbi: { constructors, mess
       .all(messages.map((m) =>
         m.isMutating || m.args.length !== 0
           ? Promise.resolve(undefined)
-          : contract.read(m, 0, -1).send(READ_ADDR).catch(() => undefined)
+          : contract.query[m.method](READ_ADDR, 0, -1).catch(() => undefined)
       ))
       .then(setLastResults)
       .catch(console.error);
@@ -125,7 +125,7 @@ export default React.memo(styled(Messages)`
   &.isLabelled {
     background: var(--bg-input);
     box-sizing: border-box;
-    border: 1px solid rgba(34,36,38,.15);
+    border: 1px solid var(--border-input);
     border-radius: .28571429rem;
     padding: 1rem 1rem 0.5rem;
     width: 100%;
