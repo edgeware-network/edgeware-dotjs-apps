@@ -2627,10 +2627,10 @@ __metadata:
   resolution: "@polkadot/app-ddelegation@workspace:packages/page-ddelegation"
   dependencies:
     "@babel/runtime": ^7.15.4
-    "@polkadot/phishing": ^0.6.335
-    "@polkadot/react-components": ^0.96.2-49
-    "@polkadot/test-support": 0.96.2-49
-    "@polkadot/vanitygen": ^0.47.1
+    "@polkadot/phishing": ^0.6.356
+    "@polkadot/react-components": ^0.97.1
+    "@polkadot/test-support": 0.97.1
+    "@polkadot/vanitygen": ^0.47.4
     detect-browser: ^5.2.1
     file-saver: ^2.0.5
   languageName: unknown
