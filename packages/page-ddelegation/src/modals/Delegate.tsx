@@ -42,7 +42,7 @@ function Delegate ({ onClose, previousAmount, previousConviction, previousDelega
     conviction !== previousConviction?.toNumber();
 
   return (
-    <Table>
+    <table>
       <Modal.Content>
         <Modal.Columns hint={
           <>
@@ -116,7 +116,7 @@ function Delegate ({ onClose, previousAmount, previousConviction, previousDelega
           tx={api.tx.democracy.delegate}
         />
       </Modal.Actions>
-    </Table>
+    </table>
   );
 }
 
