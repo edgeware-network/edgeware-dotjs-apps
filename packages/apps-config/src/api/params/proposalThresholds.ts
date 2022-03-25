@@ -9,7 +9,7 @@ const PROPOSE_THRESHOLDS: Record<string, number> = {
   [KULUPU_GENESIS]: 1,
   [KUSAMA_GENESIS]: 0.5,
   [POLKADOT_GENESIS]: 0.6,
-  default: 0.5
+  default: 0.6
 };
 
 const SLASH_THRESHOLDS: Record<string, number> = {
